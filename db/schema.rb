@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(:version => 20121204160454) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "interviewers", :force => true do |t|
+    t.string   "last_name"
+    t.string   "first_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "locations", :force => true do |t|
     t.datetime "time"
     t.string   "conference_room"
