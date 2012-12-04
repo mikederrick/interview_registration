@@ -1,15 +1,32 @@
-<h1>Listing interviewees</h1>
+<style type="text/css" media="screen">
+  .header {
+    float: left;
+  }
+  .otherHeader {
+    margin-left: 40px;
+  }
+</style>
 
-<table>
-  <tr>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Phone</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Interviewees List</a>
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="mainTable">
+  <div id="tableHeader">
+    <div class="header" style>First name</div>
+    <div class="otherHeader header">Last name</div>
+    <div class="otherHeader header">Phone</div>
+    <div class="otherHeader header">Email</div>
+    <div class="otherHeader"></div>
+    <div class="otherHeader"></div>
+    <div class="otherHeader"></div></br><br>
+  </div>
 
 <% @interviewees.each do |interviewee| %>
   <tr>
@@ -22,7 +39,7 @@
     <td><%= link_to 'Destroy', interviewee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
-</table>
+</div>
 
 <br />
 
