@@ -1,4 +1,10 @@
 InterviewRegistration::Application.routes.draw do
+  resources :interviewees
+
+
+  resources :roles
+
+
   resources :interviewers
 
 

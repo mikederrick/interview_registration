@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @interviewee.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @interviewee.last_name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @interviewee.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @interviewee.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_interviewee_path(@interviewee) %> |
+<%= link_to 'Back', interviewees_path %>
