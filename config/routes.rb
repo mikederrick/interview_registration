@@ -1,4 +1,10 @@
 InterviewRegistration::Application.routes.draw do
+  resources :interviewers
+
+
+  resources :locations
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
