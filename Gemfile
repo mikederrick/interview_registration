@@ -25,6 +25,10 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'shoulda'
+  gem 'autotest'
+  gem 'autotest-rails'
+  gem 'autotest-growl'
 end
 
 gem 'jquery-rails'
