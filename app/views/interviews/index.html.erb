@@ -1,0 +1,49 @@
+<style type="text/css" media="screen">
+  .header {
+    float: left;
+  }
+  .otherHeader {
+    margin-left: 40px;
+  }
+  #container {
+    margin-left: 30px;
+  }
+
+</style>
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Schedule an Interview</a>
+  </div>
+</div>
+
+<div id="container">
+
+  <div id="mainTable">
+    <div id="tableHeader">
+    <div class="header">Interviewee</div>
+    <div class="otherHeader header">Role</div>
+    <div class="otherHeader header">Location</div>
+    <div class="otherHeader header">Time</div>
+    </br></br>
+  </div>
+
+<% @interviews.each do |interview| %>
+  <div>
+    <div><%= interview.interviewee %></div>
+    <div><%= interview.role %></div>
+    <div><%= interview.location %></div>
+    <div><%= interview.time %></div>
+    <div><%= link_to 'Show', interview %></div>
+    <div><%= link_to 'Edit', edit_interview_path(interview) %></div>
+    <div><%= link_to 'Destroy', interview, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  </div>
+  
+  <% end %>
+  </div>
+  <btn class="btn"><%= link_to 'New Interview', new_interview_path %></button>
+
+</div>
+
+<br />
+

@@ -1,0 +1,24 @@
+
+  <div class="field">
+    <%= label :interviewee, :first_name %><br />
+    <%= text_field :interviewee, :first_name %>
+  </div>
+  <div class="field">
+    <%= label :interviewee, :last_name %><br />
+    <%= text_field :interviewee, :last_name %>
+  </div>
+  <div class="field">
+    <%= label :interviewee, :email %><br />
+    <%= text_field :interviewee, :email %>
+  </div>
+
+  </br>
+
+  <div class="field">
+    <%= select :interviewee, :role, options_for_select(Interview::ROLES) %>
+  </div>
+  </br>
+  <div class="actions">
+    <%= submit_tag 'create' %>
+  </div>
+  </br>

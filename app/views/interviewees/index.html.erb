@@ -5,40 +5,42 @@
   .otherHeader {
     margin-left: 40px;
   }
+  #container {
+    margin-left: 30px;
+  }
 </style>
 
 
-<div class="navbar">
-  <div class="navbar-inner">
-    <a class="brand" href="#">Interviewees List</a>
-    <ul class="nav">
-      <li class="active"><a href="#">Home</a></li>
-    </ul>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Interviewees List</a>
+    </div>
   </div>
-</div>
+<div id="container">
 
-<div id="mainTable">
-  <div id="tableHeader">
-    <div class="header" style><p>First name</p></div>
-    <div class="otherHeader header"><p>Last name</p></div>
-    <div class="otherHeader header"><p>Phone</p></div>
-    <div class="otherHeader header">Email</div>
-    </br>
+  <div id="mainTable">
+    <div id="tableHeader">
+      <div class="header"><p>First name</p></div>
+      <div class="otherHeader header"><p>Last name</p></div>
+      <div class="otherHeader header"><p>Phone</p></div>
+      <div class="otherHeader header">Email</div>
+      </br>
+    </div>
+
+  <% @interviewees.each do |interviewee| %>
+    <tr>
+      <td><%= interviewee.first_name %></td>
+      <td><%= interviewee.last_name %></td>
+      <td><%= interviewee.phone %></td>
+      <td><%= interviewee.email %></td>
+      <td><%= link_to 'Show', interviewee %></td>
+      <td><%= link_to 'Edit', edit_interviewee_path(interviewee) %></td>
+      <td><%= link_to 'Destroy', interviewee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
   </div>
-
-<% @interviewees.each do |interviewee| %>
-  <tr>
-    <td><%= interviewee.first_name %></td>
-    <td><%= interviewee.last_name %></td>
-    <td><%= interviewee.phone %></td>
-    <td><%= interviewee.email %></td>
-    <td><%= link_to 'Show', interviewee %></td>
-    <td><%= link_to 'Edit', edit_interviewee_path(interviewee) %></td>
-    <td><%= link_to 'Destroy', interviewee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</div>
 
 <br />
 
 <%= link_to 'New Interviewee', new_interviewee_path %>
+</div>
